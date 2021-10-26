@@ -1,0 +1,22 @@
+<!--extends html header-->
+{% extends 'header.html' %}
+<!--load project title in url-->
+{% block title %}CRUD-APPLICATION{% endblock %}
+<!--load html contents-->
+{% block content %}
+
+
+<div class="container container-fluid p-2 mt-5">
+<div class="row">
+<div class="col">
+    <a href="/view-product" class="btn btn-block btn-info">view product</a>
+</div>
+<div class="col">
+    <button class="btn btn-block btn-info">profile update</button>
+</div>
+</div>
+
+</div>
+
+
+{% endblock %}

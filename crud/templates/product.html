@@ -1,0 +1,39 @@
+<!--extends html header-->
+{% extends 'header.html' %}
+<!--load project title in url-->
+{% block title %}CRUD-APPLICATION{% endblock %}
+<!--load html contents-->
+{% block content %}
+
+<div class="container-fluid my-5 ">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quentity</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td><a href="/product-update/{{product.id}}" class="btn btn-warning">Update</a></td>
+            <td><a href="/product-delete/{{product.id}}" class="btn btn-danger">Delete</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <div class="ml-5"><a href="/product-insert" class="btn btn-info">Insert</a></div>
+    
+</div>
+
+{% endblock %}
