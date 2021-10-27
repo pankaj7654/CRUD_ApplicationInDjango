@@ -121,8 +121,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 EMAIL_SERVICE_ENDPOINT = "https://api.sendinblue.com/v3/smtp/email"
-EMAIL_SENDER_NAME = "Quick Project"
-EMAIL_SENDER_EMAIL = "quickproject8585@gmail.com"
+EMAIL_SENDER_NAME = "Smart Product Manager"
+EMAIL_SENDER_EMAIL = "product.manager@gmail.com"
 
 EMAIL_API_KEY = "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"
 

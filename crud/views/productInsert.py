@@ -4,7 +4,11 @@ from crud.models.product import Product
 
 class ProductInsertView(View):
     def get(self , request):
-        return render(request, 'productInsert.html')
+        user = request.session.get('user')
+        context={
+            "user":user
+        }
+        return render(request, 'productInsert.html', context=context)
 
     def post(self , request):
         productname = request.POST.get('productname')
@@ -16,7 +20,9 @@ class ProductInsertView(View):
         
         productObj.save()
 
+        user = request.session.get('user')
         context={
+            "user":user,
             "message":"Successfully inserted"
         }
         return render(request, 'productInsert.html', context=context)

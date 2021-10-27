@@ -1,0 +1,48 @@
+{% extends 'header.html' %}
+
+{% block title %}User profile{% endblock %}
+
+{% block content %}
+
+
+<div class="container mt-4 mb-4">
+
+    <div class="col-lg-5 col-md-6 col-sm-8 mx-auto ui segment p-2 baseBlock">
+
+
+        <!--required msg-->
+        {% if message %}
+        <div class="alert-success text-center p-2 mb-2">
+            {{message}}
+        </div>
+        {% endif %}
+        <!--required msg-->
+
+        <h1 class="text-center">Welcome.. {{profile.name}}</h1>
+        <hr>
+
+        <div class="text-center mt-3">
+            <img height="200px pt-2 rounded-circle" src="https://i.pinimg.com/originals/bb/11/b2/bb11b2406a2a8139d87c07606ddbef3c.png" alt="">
+        </div>
+
+        <div class="field ml-5 pt-3">
+            <h3 class=" mt-2">Name: {{profile.name}}</h3>
+        </div>
+        <div class="field ml-5">
+            <h3 class=" mt-2">Login Status: {{profile.active}}</h3>
+        </div>
+        <div class="field ml-5">
+            <h3 class=" mt-2">Email: {{profile.email}}</h3>
+        </div>
+        <div class="field ml-5 mb-5">
+            <h3 class=" mt-2">Phone: {{profile.phone}}</h3>
+        </div>
+        <div class="field ml-5 mb-5">
+            <a href="/user-profile-update/{{user.id}}" class="btn btn-block btn-info mt-2">Edit Profile</a>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

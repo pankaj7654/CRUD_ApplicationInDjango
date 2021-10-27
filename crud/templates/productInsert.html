@@ -6,7 +6,7 @@
 {% block content %}
 
 
-<div class="container mt-4">
+<div class="container my-4">
 
     <div class="col-lg-5 col-md-8 mx-auto ui segment p-4 baseBlock">
         <br>
@@ -28,21 +28,21 @@
             
             <div class="field">
                 <label>Product Name</label>
-                <input type="text" name="productname" >
+                <input type="text" required name="productname" >
             </div>
             <div class="field">
                 <label>Description</label>
-                <input type="text" name="description" >
+                <input type="text" required name="description" >
             </div>
 
             <div class="field">
                 <label>Quantity</label>
-                <input type="text" name="quantity">
+                <input type="number" required name="quantity">
             </div>
 
             <div class="field">
                 <label>Price</label>
-                <input type="text" name="price" >
+                <input type="number" required name="price" >
             </div>
 
             <div class="mt-3">

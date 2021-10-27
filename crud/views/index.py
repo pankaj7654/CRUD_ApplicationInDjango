@@ -6,8 +6,11 @@ from urllib.parse import urlencode
 
 # filter data from databse and send data on index.html page
 def index(request):
-
-    return render(request, 'index.html')
+    user =  request.session.get('user')
+    context={
+        "user":user
+    }
+    return render(request, 'index.html', context=context)
 
 
 

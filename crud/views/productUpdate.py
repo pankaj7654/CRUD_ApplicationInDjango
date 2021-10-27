@@ -3,13 +3,17 @@ from django.shortcuts import render , redirect
 from crud.models.product import Product
 
 class ProductUpdateView(View):
-    def get(self , request,product_id):
+    def get(self , request, product_id):
         print("From Class Based View")
+        user = request.session.get('user')
         product = Product.objects.get(id=product_id)
+        print(product,"RRRRRRRRRRRRRRRRrr")
         context={
-            "product":product
+            "product":product,
+            "user":user
         }
         return render(request, 'productUpdate.html', context=context)
+        
 
     def post(self , request, product_id):
         productname = request.POST.get('productname')
@@ -24,9 +28,11 @@ class ProductUpdateView(View):
         productObj.price=price
         productObj.save()
 
+        user = request.session.get('user')
         product = Product.objects.get(id=product_id)
         context={
             "product":product,
+            "user":user,
             "message":"Successfully Updated"
         }
         return render(request, 'productUpdate.html', context=context)

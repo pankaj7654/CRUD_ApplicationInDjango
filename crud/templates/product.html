@@ -5,11 +5,11 @@
 <!--load html contents-->
 {% block content %}
 
-<div class="container-fluid my-5 ">
-    <table class="table">
+<div class="container-fluid my-5 table-responsive">
+    <table class="table table-hover">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">SNo</th>
             <th scope="col">Name</th>
             <th scope="col">Description</th>
             <th scope="col">Price</th>
@@ -32,7 +32,7 @@
           {% endfor %}
         </tbody>
       </table>
-      <div class="ml-5"><a href="/product-insert" class="btn btn-info">Insert</a></div>
+      <div class="ml-5"><a href="/product-insert" class="btn btn-info">Add New Product</a></div>
     
 </div>
 

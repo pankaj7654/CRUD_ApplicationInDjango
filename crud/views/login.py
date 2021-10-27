@@ -27,7 +27,12 @@ class LoginView(View):
                 request.session['user'] = temp
                 if LoginView.return_url:
                     return redirect(LoginView.return_url)
-                return redirect('index') #redirect index from url name
+                context={
+                    'user':user
+                }
+                print(user,"kkkkkkkkkkkkkkkkkkkkkkkk")
+                print(user.id,"PPPPPPPPPPPPPPPPPPPPPPPPPPP")
+                return render(request, 'index.html', context=context) #redirect index from url name
             else:
                 return render(request, 'login.html' , {'error' : 'Please Enter Valide Email or Password'})        
             
