@@ -24,7 +24,7 @@ urlpatterns = [
 
      path('view-product', login_required(product.ProductView.as_view()) , name='product-view'),
 
-     path('product-update/<int:product_id>' , login_required(productUpdate.ProductUpdateView.as_view()) , name = 'product-update'),
+     path('product-update/<int:product_id>' , productUpdate.ProductUpdateView.as_view() , name = 'product-update'),
      path('product-delete/<int:product_id>' , productDelete.ProductDeleteView.as_view() , name = 'product-delete'),
 
      path('product-insert' , login_required(productInsert.ProductInsertView.as_view()) , name = 'product-insert'),
