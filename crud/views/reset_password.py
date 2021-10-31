@@ -62,7 +62,7 @@ def verifyResetPasswordCode(request):
 
 class PasswordResetVerification(View):
     def post(self , request):
-        print(request.POST.get('email'),"IIIIIIIIIIIIIIIIIIIIIIIIIIiii")
+        print(request.POST.get('email'))
         email = request.POST.get('email')
         try:
             user = User.objects.get(email = email)
@@ -80,7 +80,6 @@ class PasswordResetVerification(View):
             request.session['reset-password-email'] = email
             print(otp)
             print(email)
-            print("RRRRRRRRRRRRRRRRRRRRRRRRRRR")
             return render(request, 'reset-password.html' , {'step2' : True})
 
         except:

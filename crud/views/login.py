@@ -30,8 +30,7 @@ class LoginView(View):
                 context={
                     'user':user
                 }
-                print(user,"kkkkkkkkkkkkkkkkkkkkkkkk")
-                print(user.id,"PPPPPPPPPPPPPPPPPPPPPPPPPPP")
+                
                 return render(request, 'index.html', context=context) #redirect index from url name
             else:
                 return render(request, 'login.html' , {'error' : 'Please Enter Valide Email or Password'})        

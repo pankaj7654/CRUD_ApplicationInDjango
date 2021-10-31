@@ -11,7 +11,7 @@ class UserAdmin(admin.ModelAdmin):
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name','description','quantity','price']
+    list_display = ['id','name','description','quantity','price']
     sortable_by = ['name']
 
 admin.site.register(User , UserAdmin)

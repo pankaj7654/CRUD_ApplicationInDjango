@@ -1,6 +1,7 @@
 from django.views import View
 from django.shortcuts import render , redirect
 from crud.models.product import Product
+from crud.models.user import User
 
 class ProductInsertView(View):
     def get(self , request):
@@ -16,7 +17,11 @@ class ProductInsertView(View):
         description = request.POST.get('description')
         price = request.POST.get('price')
 
-        productObj=Product(name=productname,description=description,quantity=quantity,price=price)
+        userdict =  request.session.get('user')
+        userojb = User.objects.get(email=userdict['email'])
+
+
+        productObj=Product(name=productname,description=description,quantity=quantity,price=price,user=userojb)
         
         productObj.save()
 

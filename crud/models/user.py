@@ -11,4 +11,4 @@ class User(models.Model):
 
 # return user name in admin panel
     def __str__(self):
-        return self.name
+        return self.email

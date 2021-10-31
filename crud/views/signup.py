@@ -13,11 +13,12 @@ class SignupView(View):
             name = request.POST.get('name')
             email = request.POST.get('email')
             phone = request.POST.get('phone')
-            image = request.POST.get('photo')
             password = request.POST.get('password')           #Hashing password
             hashedPassword = make_password(password = password)
-            user = User(name = name , email = email , image = image , password = hashedPassword , phone = phone)
+            user = User(name = name , email = email , password = hashedPassword , phone = phone)
             result = user.save()
+
+
             return render(request , 'login.html')
         except:
             return render(request, 'signup.html' , {'error' : "User Already Registered..."})
